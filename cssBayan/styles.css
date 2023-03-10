@@ -1,5 +1,6 @@
 html {
   font-size: 16px;
+  color: #000;
 }
 
 body {
@@ -28,6 +29,8 @@ h1 {
 h2 {
   display: block;
   margin: 0;
+  color: rgb(92, 157, 255);
+  transition: color .2s ease-in-out;
 }
 
 .label-heading {
@@ -37,20 +40,14 @@ h2 {
 }
   
 .label-heading_status {
-  font-weight: 700;
+  background-image: url('./assets/plus_icon.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  transition: transform .2s ease-in-out;
 }
 
-.label-heading_status__close {
-  display: block;
-  background-image: url('./assets/plus_icon.svg');
-}
-
-.label-heading_status__open {
-  display: none;
-  background-image: url('./assets/plus_icon.svg');
+input:checked ~ label .label-heading_status {
   transform: rotate(45deg);
 }
 
@@ -63,14 +60,6 @@ label {
   display: block;
   width: 100%;
   cursor: pointer;
-}
-
-input:checked ~ label .label-heading_status__open {
-  display: block;
-}
-
-input:checked ~ label .label-heading_status__close {
-  display: none;
 }
 
 img {
@@ -92,19 +81,17 @@ input {
 }
 
 @media screen and (min-width: 821px) {
+
   section:hover img {
     width: 100%;
     height: 100%;
     margin-top: .75rem;
   }
 
-  section:hover .label-heading_status__close {
-    display: none;
+  section:hover .label-heading_status {
+    transform: rotate(45deg);
   }
 
-  section:hover .label-heading_status__open {
-    display: block;
-  }
 }
 
 input:checked ~ label img {
@@ -113,7 +100,9 @@ input:checked ~ label img {
   margin-top: .75rem;
 }
 
-
+input:checked ~ label h2 {
+  color: #000;
+}
 
 @media screen and (max-width: 568px) {
   h1 {
