@@ -60,7 +60,6 @@ section {
 label {
   display: block;
   width: 100%;
-  cursor: pointer;
 }
 
 img {
@@ -156,6 +155,10 @@ input:checked ~ label h2 {
 
   main:hover .label-heading_status {
     opacity: 1;
+  }
+
+  label {
+    cursor: pointer;
   }
 
 }
